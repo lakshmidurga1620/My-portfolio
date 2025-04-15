@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .section {
+      display: none !important;
+    }
+    .active-section {
+      display: block !important;
+    }
+    /* Custom Enhancements */
+    body {
+      scroll-behavior: smooth;
+    }
+    nav ul li a {
+      transition: all 0.3s ease;
+      font-weight: 500;
+    }
+    /* Home Section */
+    #home {
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       height: 80vh;
+       background-image: url('https://source.unsplash.com/1600x900/?technology,programming');
+       background-size: cover;
+       background-position: center;
+       padding-top: 200px; /* Added padding to push content down */
+    }
+
+    .hero-section h2 {
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+    }
+    
+
+    nav ul li a:hover {
+      transform: scale(1.05);
+    }
+    .btn-primary {
+      @apply inline-block px-6 py-2 text-white bg-blue-600 rounded-lg shadow hover:bg-blue-700 transition-all duration-300;
+    }
+    .card {
+      transition: all 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px) scale(1.02);
+    }
+    /* General Section Styles */
+section {
+  padding: 40px 0; /* Vertical padding for each section */
+  margin-top: 20px; /* Space between sections */
+}
+
+section h3 {
+  font-size: 36px;
+  font-weight: bold;
+  color: #2B6CB0; /* Accent color for section titles */
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+section p {
+  font-size: 18px;
+  color: #4A5568; /* Dark gray for text */
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto; /* Centering text */
+  text-align: center;
+}
+
+/* About Section */
+#about {
+  background-color: #EDF2F7; /* Light gray background */
+}
+
+#about p {
+  font-size: 20px;
+  font-style: italic;
+  color: #2D3748;
+}
+
+/* Skills Section */
+#skills {
+  background-color: #F7FAFC; /* Very light gray background */
+}
+
+#skills .grid {
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Responsive grid */
+}
+
+/* Projects Section */
+#projects {
+  background-color: #FFFFFF; /* White background for projects */
+}
+
+/* Contact Section */
+#contact {
+  background-color: #EDF2F7; /* Light background for contact */
+  text-align: center;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  section h3 {
+    font-size: 28px;
+  }
+
+  #skills .grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+
+  #projects .card {
+    padding: 20px;
+  }
+
+  #projects h4 {
+    font-size: 20px;
+  }
+
+  #contact .social-links a {
+    font-size: 18px;
+  }
+}
+
+  </style>
+</head>
+<body class="bg-gradient-to-br from-blue-100 via-white to-gray-100 text-gray-800 font-sans">
+
+  <!-- Navbar -->
+  <nav class="bg-white shadow sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-extrabold text-blue-600">S LakshmiDurga</h1>
+      <ul class="flex space-x-6">
+        <li><a href="#" onclick="showSection('home')" class="hover:text-blue-500">Home</a></li>
+        <li><a href="#" onclick="showSection('about')" class="hover:text-blue-500">About</a></li>
+        <li><a href="#" onclick="showSection('skills')" class="hover:text-blue-500">Skills</a></li>
+        <li><a href="#" onclick="showSection('projects')" class="hover:text-blue-500">Projects</a></li>
+        <li><a href="#" onclick="showSection('contact')" class="hover:text-blue-500">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+ <!-- Home -->
+<section id="home" class="section active-section h-screen flex items-center justify-center bg-blue-200">
+  <!-- Profile Image -->
+  <img src="image.jpg" alt="Profile Photo" class="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-blue-600 shadow-lg">
+    <div class="text-center">
+      <h2 class="text-5xl font-bold mb-4 text-blue-800">Hi, I'm S LakshmiDurga</h2>
+      <p class="text-xl">A Passionate Developer & Problem Solver</p>
+    </div>
+  </section>
+  
+
+  <!-- About -->
+  <section id="about" class="section py-20 px-6 bg-white">
+    <div class="max-w-4xl mx-auto text-center">
+      <h3 class="text-4xl font-bold mb-6 text-blue-600">About Me</h3>
+      <p class="text-lg">Highly motivated third-year Computer Science and Engineering student with strong expertise in Data Structures and Algorithms (DSA) and web development. I enjoy turning ideas into real applications with thoughtful design and efficient code. I’m an enthusiastic learner, constantly evolving by contributing to open-source and building cool projects!</p>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="section py-20 px-6 bg-gray-50">
+    <div class="max-w-4xl mx-auto">
+      <h3 class="text-4xl font-bold text-center mb-8 text-blue-600">Skills</h3>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div class="bg-white p-4 rounded-xl shadow hover:shadow-lg">HTML</div>
+        <div class="bg-white p-4 rounded-xl shadow hover:shadow-lg">CSS</div>
+        <div class="bg-white p-4 rounded-xl shadow hover:shadow-lg">JavaScript</div>
+        <div class="bg-white p-4 rounded-xl shadow hover:shadow-lg">ReactJS</div>
+        <div class="bg-white p-4 rounded-xl shadow hover:shadow-lg">C</div>
+        <div class="bg-white p-4 rounded-xl shadow hover:shadow-lg">Java</div>
+        <div class="bg-white p-4 rounded-xl shadow hover:shadow-lg">DSA</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="section py-20 px-6 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <h3 class="text-4xl font-bold text-center mb-12 text-blue-600">Projects</h3>
+      <div class="grid md:grid-cols-2 gap-10">
+        <div class="bg-gradient-to-br from-blue-100 to-blue-50 p-6 rounded-xl shadow-md hover:shadow-xl card">
+          <h4 class="text-2xl font-bold text-blue-800">Cycle Rental System</h4>
+          <p class="mt-2 text-gray-700">A full-stack web app for renting bicycles with user authentication, real-time availability, and online payment integration. Implemented with Node.js, MySQL, JWT and Express.js.</p>
+          <ul class="list-disc pl-5 mt-2 text-sm text-gray-600">
+            <li>100% functional system with login/registration</li>
+            <li>Secure payment gateway & booking logic</li>
+            <li>Team project with collaborative Git workflow</li>
+          </ul>
+        </div>
+
+        <div class="bg-gradient-to-br from-green-100 to-green-50 p-6 rounded-xl shadow-md hover:shadow-xl card">
+          <h4 class="text-2xl font-bold text-green-800">AI-powered Email Classifier</h4>
+          <p class="mt-2 text-gray-700">Used Natural Language Processing and Scikit-learn to build an AI system that categorizes emails into spam, important, and promotions automatically.</p>
+          <ul class="list-disc pl-5 mt-2 text-sm text-gray-600">
+            <li>Preprocessed large datasets using NLP</li>
+            <li>Trained classifier achieving high accuracy</li>
+            <li><a href="https://github.com/lakshmidurga1620/Ai-based-email-classifier-.git" class="text-blue-500 underline">GitHub Link</a></li>
+          </ul>
+        </div>
+
+        <div class="bg-gradient-to-br from-yellow-100 to-yellow-50 p-6 rounded-xl shadow-md hover:shadow-xl card">
+          <h4 class="text-2xl font-bold text-yellow-800">Personal Portfolio Website</h4>
+          <p class="mt-2 text-gray-700">Designed and coded a responsive, modern portfolio to showcase skills and projects using HTML,CSS, and JavaScript.</p>
+          <ul class="list-disc pl-5 mt-2 text-sm text-gray-600">
+            <li>Highlights personal skills, tools, and technologies</li>
+            <li>Interactive navigation with custom JS</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  
+  <!-- Contact -->
+  <section id="contact" class="section py-20 px-6 bg-white text-center">
+    <h3 class="text-4xl font-bold mb-6 text-blue-600">Contact</h3>
+    <p>Email: <a href="mailto:lakshmi1620durga@gmail.com" class="text-blue-500">lakshmi1620durga@gmail.com</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/s-lakshmi-durga-57276225b" class="text-blue-500">S LakshmiDurga</a></p>
+    <p>GitHub: <a href="https://github.com/lakshmidurga1620" class="text-blue-500">lakshmidurga1620</a></p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-4 text-center">
+    &copy; 2025 S LakshmiDurga. All rights reserved.
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    function showSection(id) {
+      const sections = document.querySelectorAll('.section');
+      sections.forEach(section => section.classList.remove('active-section'));
+      const target = document.getElementById(id);
+      if (target) target.classList.add('active-section');
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      showSection('home');
+    });
+  </script>
+
+</body>
+</html>
